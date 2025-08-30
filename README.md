@@ -1,8 +1,9 @@
-USAGE: python [scantime_crypter.py] [executable] [output]
+### USAGE
+python [scantime_crypter.py] [executable] [output]
 
-Pyinstaller:
+### Compile
 pyinstaller --onefile --noconsole stub.py
 
-Requeriments:
+### Requeriments
 pyinstaller
 pycryptodome
